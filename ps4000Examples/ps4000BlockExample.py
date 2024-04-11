@@ -5,7 +5,7 @@
 # This example opens a 4000 driver device, sets up two channels and a trigger then collects a block of data.
 # This data is then plotted as mV against time in ns.
 import sys
-sys.path.append("C:\\Users\\ayumu\\Documents\\GitHub\\picosdk-python-wrappers")
+sys.path.append("C:\\Users\\mikami\\Documents\\GitHub\\picosdk-python-wrappers")
 import ctypes
 import numpy as np
 from picosdk.ps4000 import ps4000 as ps
