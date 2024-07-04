@@ -14,13 +14,14 @@ trig_pos = 1 # 40%
 
 chandle, status = ps5000_initialize(sample_period_us, total_time_sec, trig_pos)
 adc2mVChAMax,adc2mVChBMax,d0,d1,time = ps5000_acquire(chandle, status,sample_period_us, total_time_sec, trig_pos)
-plt.plot(time, adc2mVChAMax,'-*')
-plt.plot(time, adc2mVChBMax)
-plt.plot(time,d0*1000)
-plt.plot(time, d1*1000)
+plt.plot(time, adc2mVChAMax,'-*',label='ChA')
+plt.plot(time, adc2mVChBMax,label='ChB')
+plt.plot(time,d0*1000,label='D0')
+plt.plot(time, d1*1000,label='D1')
 plt.xlabel('Time (us)')
 plt.ylabel('Voltage (mV)')
 plt.grid()
+plt.legend()
 plt.show()
 
 ps5000_close(chandle, status)
